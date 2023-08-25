@@ -1,0 +1,14 @@
++ rm -f '*.tmp'
+++ seq 1
++ for i in '$(seq 1 $N)'
++ echo absent
++ echo exit 0
++ echo present
++ echo exit 1
++ ./detecter -c -i1 -l0 ./script.tmp
+./test-120.sh: ligne 62: ./detecter: No such file or directory
++ fail 'present-absent -c'
++ echo '==> Échec du test '\''test-120'\'' sur '\''present-absent -c'\''.'
++ echo '==> Log : '\''test-120.log'\''.'
++ echo '==> Exit'
++ exit 1
